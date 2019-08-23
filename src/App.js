@@ -25,20 +25,19 @@ class TodoList extends Component {
     ));
 
     return (
-      <CSSTransitionGroup
-        transitionName="example"
-        transitionAppear={true}
-        transitionAppearTimeout={500}
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={300}
-      >
-        {/* {items} */}
-        <div className="container-outer">
-          <h1>I Am The App</h1>
-          <button onClick={this.handleAdd}>Add Item</button>
-          <h1>Fade In At Initial Mount</h1>
-        </div>
-      </CSSTransitionGroup>
+      <div className="container-outer">
+        <CSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+          
+          <button onClick={this.openContainer}>Open</button>
+          
+        </CSSTransitionGroup>
+      </div>
     );
   }
 }

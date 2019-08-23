@@ -148,6 +148,8 @@ td {
 /* Button (General Use) */
 
 button {
+  height: 50px;
+  width: 100px;
   background-color: #5c6a79;
   color: white;
   padding: 1px 10px;
@@ -155,7 +157,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-family: "Oswald", sans-serif;
-  font-size: 0.9em;
+  font-size: 1.2em;
   border-radius: 5px;
 }
 
