@@ -33,10 +33,11 @@ class App extends Component {
     return (
       <div>
         <div className="spacer10" />
-        <InButton bool={bool} toggle={toggle} />
-        <DisplayComp bool={bool} toggle={toggle} />
-
-       
+        {bool ? (
+          <InButton bool={bool} toggle={toggle} />
+        ) : (
+          <DisplayComp bool={bool} toggle={toggle} />
+        )}
       </div>
     );
   }

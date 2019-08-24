@@ -13,20 +13,25 @@ const transitionStyles = {
 class DisplayComp extends Component {
   render() {
     return (
-      <Transition in={this.props.bool} timeout={400}>
-        {status => (
-          <div
-            style={{
-              ...defaultStyle,
-              ...transitionStyles[status]
-            }}
-          >
-            <h2>This Text Will Fade Out</h2>
-            <button onClick={this.props.toggle}>Fade Component Out</button>
-            {console.log(status)}
-          </div>
-        )}
-      </Transition>
+      <div>
+        <h2>This Text Will Fade Out</h2>
+        <button onClick={this.props.toggle}>Fade Component Out</button>
+      </div>
+      // <Transition in={this.props.bool} timeout={400}>
+      //   {status => (
+      //     <div
+      //       style={{
+      //         ...defaultStyle,
+      //         ...transitionStyles[status]
+      //       }}
+      //     >
+      //       <h2>This Text Will Fade Out</h2>
+      //       <button onClick={this.props.toggle}>Fade Component Out</button>
+      //       {console.log(status)}
+      //       {console.log("Fading Out.")}
+      //     </div>
+      //   )}
+      // </Transition>
     );
   }
 }
