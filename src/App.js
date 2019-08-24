@@ -3,7 +3,10 @@ import "./App.css";
 import { Transition } from "react-transition-group";
 import DisplayComp from "./DisplayComp";
 
-const defaultStyle = { transition: "opacity 400ms ease-in-out", opacity: 0 };
+const defaultStyle = {
+  transition: "opacity  400ms ease-in-out",
+  opacity: 0
+};
 
 const transitionStyles = {
   entering: { opacity: 0 },
@@ -30,11 +33,15 @@ class App extends Component {
 
     return (
       <div className="container-outer">
-        {bool ? (
-          <button onClick={toggle}>Toggle Display Component</button>
-        ) : (
-          <DisplayComp toggle={this.toggle} />
-        )}
+        <button onClick={toggle}>Toggle Display Component</button>
+        <Transition in={bool} timeout={400}>
+          {status => (
+            <div style={{ ...defaultStyle, ...transitionStyles[status] }}>
+              {console.log(status)}
+              <h1>I Am The Component</h1>
+            </div>
+          )}
+        </Transition>
       </div>
     );
   }
