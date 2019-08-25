@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Transition } from "react-transition-group";
 import "./App.css";
+import CSSExample from "./CSSExample";
 
 const defaultStyle = { transition: "opacity 400ms ease-in-out", opacity: 0 };
 
@@ -27,13 +28,13 @@ class App extends Component {
     return (
       <div>
         <div className="spacer10" />
-        <div className="container-outer">
+        {/* <div className="container-outer">
           <button onClick={toggle}>Fade</button>
           <Transition
             in={bool}
             timeout={600}
             onExiting={node => {
-              // console.log("Exiting!!!")
+              console.log("I Am Exiting!!!");
               console.dir(node);
             }}
           >
@@ -44,7 +45,8 @@ class App extends Component {
               </div>
             )}
           </Transition>
-        </div>
+        </div> */}
+        <CSSExample />
       </div>
     );
   }
