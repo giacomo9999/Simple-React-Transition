@@ -29,7 +29,14 @@ class App extends Component {
         <div className="spacer10" />
         <div className="container-outer">
           <button onClick={toggle}>Fade</button>
-          <Transition in={bool} timeout={600}>
+          <Transition
+            in={bool}
+            timeout={600}
+            onExiting={node => {
+              // console.log("Exiting!!!")
+              console.dir(node);
+            }}
+          >
             {status => (
               <div style={{ ...defaultStyle, ...transitionStyles[status] }}>
                 <h1>This Text Fades In And Out</h1>
