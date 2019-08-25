@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
 import { Transition } from "react-transition-group";
-import DisplayComp from "./DisplayComp";
+import "./App.css";
 
-const defaultStyle = {
-  transition: "opacity  400ms ease-in-out",
-  opacity: 0
-};
+const defaultStyle = { transition: "opacity 400ms ease-in-out", opacity: 0 };
 
 const transitionStyles = {
   entering: { opacity: 0 },
@@ -19,10 +15,7 @@ class App extends Component {
   state = { bool: false };
 
   toggle = () => {
-    console.log("Toggling state...");
-    this.setState(prevState => ({
-      bool: !prevState.bool
-    }));
+    this.setState(prevState => ({ bool: !prevState.bool }));
   };
 
   render() {
@@ -32,16 +25,19 @@ class App extends Component {
     } = this;
 
     return (
-      <div className="container-outer">
-        <button onClick={toggle}>Toggle Display Component</button>
-        <Transition in={bool} timeout={400}>
-          {status => (
-            <div style={{ ...defaultStyle, ...transitionStyles[status] }}>
-              {console.log(status)}
-              <h1>I Am The Component</h1>
-            </div>
-          )}
-        </Transition>
+      <div>
+        <div className="spacer10" />
+        <div className="container-outer">
+          <button onClick={toggle}>Fade</button>
+          <Transition in={bool} timeout={600}>
+            {status => (
+              <div style={{ ...defaultStyle, ...transitionStyles[status] }}>
+                <h1>This Text Fades In And Out</h1>
+                {console.log(status)}
+              </div>
+            )}
+          </Transition>
+        </div>
       </div>
     );
   }
